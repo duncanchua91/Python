@@ -3,10 +3,14 @@ To utilize Python3 on Kali Linux to create a script to run a basic Nmap port sca
 
 ## Install python-nmap module on Linux Distro:
 * Make sure you are in root privilege first
-<code>$ su - root</code>
+~~~
+$ su - root
+~~~
 
 * Install python-nmap module
-<code>$ pip3 install python-nmap</code>
+~~~
+$ pip3 install python-nmap
+~~~
 
 ## Reference:
 [HackerSploit Python3 For Pentesting - Developing An Nmap Scanner](https://www.youtube.com/watch?v=1lh_SkY8cHk) 
