@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+#My attempt
+
+try: 
+    weight = float(input("Weight:"))  # Prompts user to enter weight
+        
+    unit = input("Do you want to convert to (K)g or (L)bs:")  # Ask user if weight is in Kg or Lbs
+
+    if unit.upper() == "K":  # If weight is in Kg; Also this input is not case sensitive
+        result = weight * 2.20462  # Convert Kg to Lbs by multiplying 2.20462
+        print(f"Weight in Lbs: {result:.1f}")  # Print converted weight in 1 decimal place
+
+    elif unit.upper() == "L":  # If weight is in Lbs; Also this input is not case sensitive
+        result = weight * 0.453592  # Convert Lbs to Kg by multiplying 0.453592
+        print(f"Weight in Kg: {result:.1f}")  # Print converted weight in 1 decimal place
+
+    else:
+        print(f"Input only accepts letter K or L")  # Validate user input, only accepts values K or L
+except:
+    print("Input only accept numbers")  # try and except; only accepts user weight input to float (e.g. no alphabets)
