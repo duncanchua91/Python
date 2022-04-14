@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+#My attempt
+
+import re  # simple regular expression
+
+print("Hey there, welcome to Duncan's Coffee!")  #  Greet customer
+
+while True:
+    customerName = input("Hey there, please enter your name: ")
+    if not re.match("^[a-zA-Z]*$", customerName): # only accept alphabetical characters
+        print ("Please make sure you only enter letters for your name")  # while loop will only accept valid name in alphabet
+    else:
+        print("Hello " + customerName +", thank you so much for coming in today.")  # accept input if customer name is correct and breaks out of while loop
+        break  # break out of while loop only when name is in alphabetical characters
+
+print("Please enter an option from the menu:")
+
+def menu():
+    print("[1] Black Coffee")
+    print("[2] Mocha")
+    print("[3] Latte")
+    print("[4] Tea")
+    print("[0] Exit the menu")
+menu()
+
+while True:
+    option = str(input("Please select an option from our main menu: "))
+    if not re.match("^[0-4]+$", str(option)):
+        print("Please make sure you only enter options 0 to 4")
+    elif option == '1':
+        print("Sounds good " + customerName + ", we will have your Black Coffee ready in a moment.")
+        break
+    elif option == '2':
+        print("Sounds good " + customerName + ", we will have your Mocha ready in a moment.")
+        break
+    elif option == '3':
+        print("Sounds good " + customerName + ", we will have your Latte ready in a moment.")
+        break
+    elif option == '4':
+        print("Sounds good " + customerName + ", we will have your Tea ready in a moment.")
+        break
+    elif option == '0':
+        print("Thanks for coming in again " + customerName)
+        break
+    else:
+        print("Please make sure you only enter options 0 to 4")

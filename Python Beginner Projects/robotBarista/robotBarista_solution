@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+print("Hello, welcome to NetworkChuck Coffee !!!!")
+
+name = input("What is your name?\n")
+
+print("Hello " + name + ", thank you so much for coming in today.")
+
+menu = "Black Coffee, Espresso, Latte, Cappucino \n"
+
+order = input(name + ", what would you like from our menu today? Here is what we are serving.\n" + menu)
+
+print("Sounds good " + name + ", we'll have that " + order + " ready for you in a moment.")
