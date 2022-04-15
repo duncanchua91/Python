@@ -11,8 +11,9 @@ while True:
         print ("Please make sure you only enter letters for your name")  # while loop will only accept valid name in alphabet
     else:
         print("Hello " + customerName +", thank you so much for coming in today.")  # accept input if customer name is correct and breaks out of while loop
-        break  # break out of while loop only when name is in alphabetical characters
+        break  # break out of while loop only when name is entered in alphabets
 
+#Menu
 print("Please enter an option from the menu:")
 
 def menu():
@@ -23,24 +24,39 @@ def menu():
     print("[0] Exit the menu")
 menu()
 
-while True:
-    option = str(input("Please select an option from our main menu: "))
-    if not re.match("^[0-4]+$", str(option)):
-        print("Please make sure you only enter options 0 to 4")
+count = 0  # set count to 0, will count up to 3 failed attempts.
+
+while count <= 2:  # Using while loop for validation purpose. Only allow 3 failed attempts.
+    
+    option = str(input("Please select an option from our main menu: "))  # input string value instead of integer due to Regex validation
+    
+    if not re.match("^[0-4]+$", str(option)):  # Regex validation - If input is not 0,1,2,3,4 then prompt customer to re-enter input 
+        print("Please make sure you only enter options 0 to 4") 
+
     elif option == '1':
         print("Sounds good " + customerName + ", we will have your Black Coffee ready in a moment.")
-        break
+        break  # break while loop as soon as input is correct
+
     elif option == '2':
         print("Sounds good " + customerName + ", we will have your Mocha ready in a moment.")
         break
+
     elif option == '3':
         print("Sounds good " + customerName + ", we will have your Latte ready in a moment.")
         break
+
     elif option == '4':
         print("Sounds good " + customerName + ", we will have your Tea ready in a moment.")
         break
+
     elif option == '0':
         print("Thanks for coming in again " + customerName)
         break
+
     else:
-        print("Please make sure you only enter options 0 to 4")
+        print("Please make sure you only enter options 0 to 4")  # make sure customers do not enter double digits e.g. 11, 22, 33
+    
+    count = count + 1  # increase count variable by 1 in each iteration of the loop. Max 3 times.
+
+    if count == 3:
+        print("Please contact our barista for help")
